@@ -121,6 +121,32 @@ Server listens on http://localhost:5002
 `npm run dev` — start in development mode (hot-reload)
 `npm start` — run compiled code (dist/app.js)
 
+## Docker
+To containerize the API with a simple `Dockerfile`:
+
+```bash
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+EXPOSE 5002
+CMD ["npm", "run", "dev"]
+```
+1. Build the image
+   ```bash
+   docker build -t ecommerce-backend .
+2. Run a container
+```bash
+   docker run -d \
+  --name ecommerce-api \
+  --env-file .env \
+  -p 5002:5002 \
+  ecommerce-backend
+```
+
+
 ## Author
 
 Prakhar Tiwari
