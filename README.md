@@ -36,7 +36,7 @@ This is the backend service for the E-Commerce Admin Portal. It provides:
 **Clone repository**
 
 ```bash
-git clone https://github.com/your-org/ecommerce-backend.git
+git clone https://github.com/prakhartiwari24/elegant-ecommerce-backend.git
 cd ecommerce-backend
 npm ci
 ```
